@@ -12,6 +12,12 @@ ALLOWED_HOSTS = ['*', ]
 
 INSTALLED_APPS += ('django_nose', )
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
+
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
      '--verbosity=2',
